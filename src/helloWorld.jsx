@@ -8,6 +8,7 @@ import message from './helloWorld2.js';
 
 const staff = [
   { firstName: 'Bob', lastName: 'Jones', emailAddress: 'bob@bobster.com' },
+  { firstName: 'Darren', lastName: 'Alan', emailAddress: 'darren@alan.com' },
   { firstName: 'Cressida', lastName: 'Smith', phoneNumber: '0xxxx 1234 56' }
 ];
 
