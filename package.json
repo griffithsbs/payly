@@ -1,0 +1,23 @@
+{
+  "name": "payly",
+  "version": "1.0.0",
+  "description": "A React component library for displaying and manipulating staff and client data",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Ben Griffiths",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0"
+  }
+}

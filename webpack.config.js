@@ -1,0 +1,24 @@
+'use strict';
+
+module.exports = {
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?$/, // load .js and .jsx files through babel
+                loader: 'babel',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['react', 'es2015']
+                }
+            }
+        ],
+    },
+    entry: [
+        'babel-polyfill',
+        './src/helloWorld.jsx', // to bundle this file into dist/payly.js, execute "webpack" at the project root directory
+    ],
+    output: {
+        path: './dist/',
+        filename: 'payly.js'
+    }
+};
