@@ -8,6 +8,7 @@ class StaffList extends React.Component {
     constructor(props) {
         super(props);
         this._sortByName = this._sortByName.bind(this);
+        this._onStaffChange = this._onStaffChange.bind(this);
         this.state = { 
             sortedStaff: this.props.staff.map((v, i) => Object.assign({}, v, { key: i.toString() }))
         };
@@ -18,19 +19,26 @@ class StaffList extends React.Component {
         return (
             <div>
                 <button onClick={this._sortByName}>Sort by name (A-Z)</button>
-                {this.state.sortedStaff.map(s => <Person {...s} />)}
+                {this.state.sortedStaff.map(s => <Person {...s} listKey={s.key} onChange={this._onStaffChange} />)}
             </div>
         );
     }
 
-    /**
-     * N.B. edits to the staff's names won't be reflected if ordering is re-applied
-     */
     _sortByName() {
         const sortedStaff = this.state.sortedStaff.sort(byName);
         this.setState({
             sortedStaff
         });
+    }
+
+    _onStaffChange(changedStaffMember) {
+        const sortedStaff = this.state.sortedStaff.map(staffMember => {
+            if(staffMember.key == changedStaffMember.key) {
+                return changedStaffMember;
+            }
+            return staffMember;
+        });
+        this.setState({ sortedStaff });
     }
 
 }

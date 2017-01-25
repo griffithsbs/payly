@@ -21,6 +21,7 @@ class EditPersonName extends React.Component {
         this.props.onSave({
             firstName: this.firstNameInput.value,
             lastName: this.lastNameInput.value,
+            key: this.props.listKey
         });
     }
 
@@ -29,7 +30,8 @@ class EditPersonName extends React.Component {
 EditPersonName.propTypes = {
     firstName: React.PropTypes.string,
     lastName: React.PropTypes.string.isRequired,
-    onSave: React.PropTypes.func.isRequired
+    onSave: React.PropTypes.func.isRequired,
+    listKey: React.PropTypes.string // used to refer to the index of the component within a list of editable names
 }
 
 export { EditPersonName as default }
