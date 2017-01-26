@@ -17,7 +17,7 @@ class StaffList extends React.Component {
             sortingFunction: byName.ascending
         };
     }
-// TODO radios to allow different sorting funcs to be chosen
+// TODO use a ListSorter component
     render() {
         return (
             <div>
