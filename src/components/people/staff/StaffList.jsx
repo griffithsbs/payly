@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Person from '../Person.jsx';
+import StaffMember from './StaffMember.jsx';
 import { byName } from '../../../lib/orderings.js';
 
 class StaffList extends React.Component {
@@ -19,7 +19,7 @@ class StaffList extends React.Component {
         return (
             <div>
                 <button onClick={this._sortByName}>Sort by name (A-Z)</button>
-                {this.state.sortedStaff.map(s => <Person {...s} listKey={s.key} onChange={this._onStaffChange} />)}
+                {this.state.sortedStaff.map(s => <StaffMember {...s} listKey={s.key} onChange={this._onStaffChange} />)}
             </div>
         );
     }

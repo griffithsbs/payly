@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Person from './components/people/Person.jsx';
 import StaffList from './components/people/staff/StaffList.jsx';
 
 import message from './helloWorld2.js';

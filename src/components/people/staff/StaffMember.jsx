@@ -1,8 +1,9 @@
 import React from 'react';
 
-import PersonName from './names/PersonName.jsx';
+import PersonName from '../names/PersonName.jsx';
 
-class Person extends React.Component {
+class StaffMember extends React.Component {
+ 
     render() {
         return ( 
             <div>
@@ -16,9 +17,10 @@ class Person extends React.Component {
             </div>
         );
     }
+
 }
 
-Person.propTypes = {
+StaffMember.propTypes = {
     firstName: React.PropTypes.string,
     lastName: React.PropTypes.string.isRequired,
     emailAddress: React.PropTypes.string,
@@ -27,4 +29,4 @@ Person.propTypes = {
     listKey: React.PropTypes.string
 }
 
-export { Person as default }
+export { StaffMember as default }
