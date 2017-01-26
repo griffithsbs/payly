@@ -1,7 +1,8 @@
 import React from 'react';
 
-import StaffMember from './StaffMember.jsx';
 import { byName } from '../../../lib/orderings.js';
+import SortButton from '../../general/SortButton.jsx';
+import StaffMember from './StaffMember.jsx';
 
 class StaffList extends React.Component {
 
@@ -18,7 +19,7 @@ class StaffList extends React.Component {
         let index = 0;
         return (
             <div>
-                <button onClick={this._sortByName}>Sort by name (A-Z)</button>
+                <SortButton label="Sort by name (A-Z)" onSort={this._sortByName} />
                 {this.state.sortedStaff.map(s => <StaffMember {...s} listKey={s.key} onChange={this._onStaffChange} />)}
             </div>
         );
