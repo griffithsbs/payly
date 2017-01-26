@@ -3,11 +3,16 @@ import React from 'react';
 import PersonName from '../names/PersonName.jsx';
 
 class StaffMember extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this._onChange = this._onChange.bind(this);
+    }
  
     render() {
         return ( 
             <div>
-                <PersonName firstName={this.props.firstName} lastName={this.props.lastName} listKey={this.props.listKey} onChange={this.props.onChange} />
+                <PersonName firstName={this.props.firstName} lastName={this.props.lastName} listKey={this.props.listKey} onChange={this._onChange} />
                 <div>
                     <span>Email: {this.props.emailAddress}</span>
                 </div>
@@ -16,6 +21,10 @@ class StaffMember extends React.Component {
                 </div>
             </div>
         );
+    }
+
+    _onChange(newValue) {
+        this.props.onChange(Object.assign({}, this.props, { onChange: null }, newValue));
     }
 
 }
