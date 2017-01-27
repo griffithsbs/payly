@@ -1,5 +1,6 @@
 import React from 'react';
 
+import LabelledTextField from '../../general/textfields/LabelledTextField.jsx';
 import PersonName from '../names/PersonName.jsx';
 
 class StaffMember extends React.Component {
@@ -10,15 +11,15 @@ class StaffMember extends React.Component {
     }
  
     render() {
+        const listKeyAndChangeHandler = {
+            listKey: this.props.listKey,
+            onChange: this._onChange
+        };
         return ( 
             <div>
-                <PersonName firstName={this.props.firstName} lastName={this.props.lastName} listKey={this.props.listKey} onChange={this._onChange} />
-                <div>
-                    <span>Email: {this.props.emailAddress}</span>
-                </div>
-                <div>
-                    <span>Phone: {this.props.phoneNumber}</span>
-                </div>
+                <PersonName firstName={this.props.firstName} lastName={this.props.lastName} {...listKeyAndChangeHandler} />
+                <LabelledTextField label="Email" value={this.props.emailAddress} {...listKeyAndChangeHandler} />
+                <LabelledTextField label="Phone" value={this.props.phoneNumber} {...listKeyAndChangeHandler} />
             </div>
         );
     }

@@ -1,13 +1,11 @@
 import React from 'react';
 
+import ViewTextField from '../../general/textfields/ViewTextField.jsx';
+
 class ViewPersonName extends React.Component {
 
     render() {
-        return (
-            <div>
-                <span>{this.props.firstName} {this.props.lastName} <button onClick={this.props.onEdit}>Edit</button></span>
-            </div>
-        );
+        return <ViewTextField value={`${this.props.firstName} ${this.props.lastName}`} onEdit={this.props.onEdit} />;
     }
 
 }
