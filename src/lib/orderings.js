@@ -1,5 +1,5 @@
-export const ascending = 'ascending';
-export const descending = 'descending';
+const ascending = 'ascending';
+const descending = 'descending';
 
 const sortByProp = (a, b, propAccessor) => {
     const firstValue = propAccessor(a),
@@ -33,13 +33,15 @@ const reverseDirection = direction => {
     throw new Error('unrecognised direction');
 };
 
-export function sortBy(propAccessor) {
+function sortBy(propAccessor) {
     return (a, b) => sortByProp(a, b, propAccessor);
 };
 
-export function reverse(value) {
+function reverse(value) {
     if(typeof(value) === 'function') {
         return reverseSortingFunc(value);
     }
     return reverseDirection(value);
 }
+
+export { ascending, descending, sortBy, reverse }
