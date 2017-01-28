@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { sortBy, ascending } from 'lib/orderings.js';
-import ListSorter from 'components/general/ListSorter.jsx';
-import StaffMember from 'components/people/staff/StaffMember.jsx';
+import { sortBy, ascending } from 'lib/orderings';
+import ListSorter from 'components/general/ListSorter';
+import StaffMember from 'components/people/staff/StaffMember';
 
 class StaffList extends React.Component {
 

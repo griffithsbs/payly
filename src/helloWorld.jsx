@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import StaffList from 'components/people/staff/StaffList.jsx';
+import StaffList from 'components/people/staff/StaffList';
 
-import message from 'helloWorld2.js';
+import message from 'helloWorld2';
 
 import { createStore } from 'redux';
 

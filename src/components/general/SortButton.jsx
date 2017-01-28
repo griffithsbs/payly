@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ascending, descending } from 'lib/orderings.js';
+import { ascending, descending } from 'lib/orderings';
 
 class SortButton extends React.Component {
 

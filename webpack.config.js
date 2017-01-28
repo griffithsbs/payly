@@ -18,11 +18,12 @@ module.exports = {
     resolve: {
         root: [
             path.resolve('./src')
-        ]
+        ],
+        extensions: ['', '.js', '.jsx']
     },
     entry: [
         'babel-polyfill',
-        './src/helloWorld.jsx', // to bundle this file into dist/payly.js, execute "webpack" at the project root directory
+        './src/helloWorld', // to bundle this file into dist/payly.js, execute "webpack" at the project root directory
     ],
     output: {
         path: './dist/',
