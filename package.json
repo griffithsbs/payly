@@ -4,7 +4,7 @@
   "description": "A React component library for displaying and manipulating staff and client data",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --require babel-core/register --recursive"
   },
   "author": "Ben Griffiths",
   "license": "ISC",
