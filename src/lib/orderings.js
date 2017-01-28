@@ -1,7 +1,29 @@
 export const ascending = 'ascending';
 export const descending = 'descending';
 
-const oppositeDirectionOf = direction => {
+const sortByProp = (a, b, propAccessor) => {
+    const firstValue = propAccessor(a),
+          secondValue = propAccessor(b);
+
+    if(firstValue === secondValue) return 0;
+
+    return firstValue < secondValue ? -1 : 1;
+};
+
+const reverseSortingFunc = function reverseSortingFunc(sortingFunc) {
+    if(sortingFunc.opposite) {
+        return sortingFunc.opposite;
+    }
+    const opposite = (a, b) => {
+        const resultOfSame = sortingFunc(a, b);
+        return resultOfSame ? -resultOfSame : 0; // don't reverse polarity of zero
+    };
+    opposite.opposite = sortingFunc;
+    sortingFunc.opposite = opposite;
+    return opposite;
+};
+
+const reverseDirection = direction => {
     if(direction === ascending) {
         return descending;
     }
@@ -11,35 +33,13 @@ const oppositeDirectionOf = direction => {
     throw new Error('unrecognised direction');
 };
 
-const oppositeSortingFunctionOf = f => f.opposite;
+export function sortBy(propAccessor) {
+    return (a, b) => sortByProp(a, b, propAccessor);
+};
 
-export function oppositeOf(value) {
+export function reverse(value) {
     if(typeof(value) === 'function') {
-        return oppositeSortingFunctionOf(value);
+        return reverseSortingFunc(value);
     }
-    return oppositeDirectionOf(value);
+    return reverseDirection(value);
 }
-
-const sortByProp = (a, b, propName, direction) => {
-    direction = direction || ascending;
-    if(a[propName] === b[propName]) return 0;
-
-    const comesBeforeResult = direction === ascending ? -1 : 1;
-    const comesAfterResult = -comesBeforeResult;
-
-    return a[propName] < b[propName] ? comesBeforeResult : comesAfterResult;
-};
-
-const byName = function byName(a, b) {
-    return sortByProp(a, b, 'lastName') || sortByProp(a, b, 'firstName');
-};
-byName.ascending = byName;
-byName.descending = function(a, b) {
-    return sortByProp(a, b, 'lastName', descending) || sortByProp(a, b, 'firstName', descending);
-};
-byName.opposite = byName.descending;
-byName.descending.opposite = byName;
-
-export const sortingFuncs = {
-    byName
-};

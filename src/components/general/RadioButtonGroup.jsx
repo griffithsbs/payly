@@ -4,8 +4,8 @@ class RadioButtonGroup extends React.Component { // TODO this could be a pure fu
 
     render() {
         const buttons = this.props.buttons.map(b => 
-            <label>
-                <input type="radio" selected={b.isSelected} onChange={this.props.onSelected(b.value)} /> {b.label}
+            <label key={b.key}>
+                <input type="radio" checked={!!b.isSelected} onChange={() => this.props.onSelected(b.key)} /> {b.label}
             </label>
         );
         return <div>{buttons}</div>;
