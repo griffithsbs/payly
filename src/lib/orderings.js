@@ -11,16 +11,16 @@ const sortByProp = (a, b, propAccessor) => {
 };
 
 const reverseSortingFunc = function reverseSortingFunc(sortingFunc) {
-    if(sortingFunc.opposite) {
-        return sortingFunc.opposite;
+    if(sortingFunc._reversed) {
+        return sortingFunc._reversed;
     }
-    const opposite = (a, b) => {
+    const reversed = (a, b) => {
         const resultOfSame = sortingFunc(a, b);
         return resultOfSame ? -resultOfSame : 0; // don't reverse polarity of zero
     };
-    opposite.opposite = sortingFunc;
-    sortingFunc.opposite = opposite;
-    return opposite;
+    reversed._reversed = sortingFunc;
+    sortingFunc._reversed = reversed;
+    return reversed;
 };
 
 const reverseDirection = direction => {
