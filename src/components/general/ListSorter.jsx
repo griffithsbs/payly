@@ -13,7 +13,7 @@ class ListSorter extends React.Component {
         super(props);
 
         this.state = {
-            sortingOptions: this.props.sortingOptions,
+            sortingOptions: this.props.sortingOptions.map(o => Object.assign({}, o, { defaultSortingFunc: o.sortingFunc })),
             sortDirection: defaultSortDirection
         };
 
@@ -37,7 +37,7 @@ class ListSorter extends React.Component {
 
     _onSortStrategySelected(strategy) {
         const sortingOptions = this.state.sortingOptions.map(o => 
-            Object.assign({}, o, { isSelected: o.key === strategy })
+            Object.assign({}, o, { isSelected: o.key === strategy, sortingFunc: o.defaultSortingFunc })
         );
         this.setState({
             sortingOptions,
