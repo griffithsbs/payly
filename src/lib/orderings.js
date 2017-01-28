@@ -10,7 +10,7 @@ const sortByProp = (a, b, propAccessor) => {
     return firstValue < secondValue ? -1 : 1;
 };
 
-const reverseSortingFunc = function reverseSortingFunc(sortingFunc) {
+const reverseSortingFunc = sortingFunc => {
     if(sortingFunc._reversed) {
         return sortingFunc._reversed;
     }
