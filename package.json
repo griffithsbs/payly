@@ -4,7 +4,7 @@
   "description": "A React component library for displaying and manipulating staff and client data",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive" // recursive option specifies to also run test scripts in sub-directories of test directory
+    "test": "mocha --recursive"
   },
   "author": "Ben Griffiths",
   "license": "ISC",
