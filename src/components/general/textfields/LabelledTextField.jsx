@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TextField from './TextField.jsx';
+import TextField from 'components/general/textfields/TextField.jsx';
 
 export default function LabelledTextField(props) {
     // TODO use helper function to copy subset of props, e.g. from underscore

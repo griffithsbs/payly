@@ -1,7 +1,7 @@
 import React from 'react';
 
-import EditTextField from './EditTextField.jsx';
-import ViewTextField from './ViewTextField.jsx';
+import EditTextField from 'components/general/textfields/EditTextField.jsx';
+import ViewTextField from 'components/general/textfields/ViewTextField.jsx';
 
 class TextField extends React.Component {
 

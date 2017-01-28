@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 module.exports = {
     module: {
         loaders: [
@@ -12,6 +14,11 @@ module.exports = {
                 }
             }
         ],
+    },
+    resolve: {
+        root: [
+            path.resolve('./src')
+        ]
     },
     entry: [
         'babel-polyfill',

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import EditPersonName from './EditPersonName.jsx';
-import ViewPersonName from './ViewPersonName.jsx';
+import EditPersonName from 'components/people/names/EditPersonName.jsx';
+import ViewPersonName from 'components/people/names/ViewPersonName.jsx';
 
 class PersonName extends React.Component {
 

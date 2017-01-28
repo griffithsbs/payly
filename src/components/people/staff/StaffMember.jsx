@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LabelledTextField from '../../general/textfields/LabelledTextField.jsx';
-import PersonName from '../names/PersonName.jsx';
+import LabelledTextField from 'components/general/textfields/LabelledTextField.jsx';
+import PersonName from 'components/people/names/PersonName.jsx';
 
 class StaffMember extends React.Component {
 

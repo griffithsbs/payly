@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ViewTextField from '../../general/textfields/ViewTextField.jsx';
+import ViewTextField from 'components/general/textfields/ViewTextField.jsx';
 
 class ViewPersonName extends React.Component {
 

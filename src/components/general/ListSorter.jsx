@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { ascending, reverse } from '../../lib/orderings.js';
+import { ascending, reverse } from 'lib/orderings.js';
 
-import SortButton from './SortButton.jsx';
-import RadioButtonGroup from './RadioButtonGroup.jsx';
+import SortButton from 'components/general/SortButton.jsx';
+import RadioButtonGroup from 'components/general/RadioButtonGroup.jsx';
 
 const defaultSortDirection = ascending;
 
