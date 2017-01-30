@@ -1,23 +1,22 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "sourceType": "module"
-    },
+    "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
     "rules": {
-        "no-const-assign": "warn",
-        "no-this-before-super": "warn",
-        "no-undef": "warn",
-        "no-unreachable": "warn",
-        "no-unused-vars": "warn",
-        "constructor-super": "warn",
-        "valid-typeof": "warn"
+        "indent": [
+            1, 4
+        ],
+        "linebreak-style": "off",
+
+        "semi": [ 1, "always", { "omitLastInOneLineBlock": true } ],
+
+        "comma-dangle": "off",
+        "no-underscore-dangle": "off",
+        "arrow-parens": "off",
+
+        "react/sort-comp": "off"
     }
 }

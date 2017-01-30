@@ -1,7 +1,7 @@
 import React from 'react';
 
-import EditTextField from 'components/general/textfields/EditTextField';
-import ViewTextField from 'components/general/textfields/ViewTextField';
+import EditTextField from 'components/general/textfields/EditTextField'; // eslint-disable-line no-unused-vars
+import ViewTextField from 'components/general/textfields/ViewTextField'; // eslint-disable-line no-unused-vars
 
 class TextField extends React.Component {
 
