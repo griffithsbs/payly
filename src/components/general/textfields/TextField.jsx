@@ -13,7 +13,7 @@ class TextField extends React.Component {
     }
 
     render() {
-        const childProps = Object.assign({}, { value: this.state.value, listKey: this.props.listKey });
+        const childProps = { value: this.state.value, listKey: this.props.listKey };
         return this.state.isEditable ?
             <EditTextField {...childProps} onSave={this._onSave} /> :
             <ViewTextField {...childProps} onEdit={this._onEdit} /> ;

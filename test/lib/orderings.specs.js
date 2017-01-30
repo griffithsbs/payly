@@ -1,6 +1,7 @@
-const chai = require('chai');
+import { describe, it } from 'mocha';
+import chai from 'chai';
 
-import { ascending, descending, sortBy, reverse } from '../../src/lib/orderings';
+import { ascending, descending, sortBy, reverse } from 'lib/orderings';
 
 describe('orderings', function() {
 
