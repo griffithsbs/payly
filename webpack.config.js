@@ -23,10 +23,10 @@ module.exports = {
     },
     entry: [
         'babel-polyfill',
-        './src/helloWorld', // to bundle this file into dist/payly.js, execute "webpack" at the project root directory
+        './src/index', // to bundle this file into dist/index.js, execute "webpack" at the project root directory
     ],
     output: {
         path: './dist/',
-        filename: 'payly.js'
+        filename: 'index.js'
     }
 };
