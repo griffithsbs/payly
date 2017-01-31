@@ -61,7 +61,7 @@ describe('<TextField />', () => {
 
     it('displays the editable value', () => {
       const fieldValue = "I'll take her back again";
-      const testSubject = mount(<TextField onChange={noop} value={fieldValue} isEditable={true} />);
+      const testSubject = mount(<TextField onChange={noop} value={fieldValue} isEditable />);
 
       testSubject.find(EditTextField).first().should.have.prop('value').equal(fieldValue);
     });
@@ -69,7 +69,7 @@ describe('<TextField />', () => {
     describe('when the save button is clicked', () => {
 
       it('becomes read-only', () => {
-        const testSubject = mount(<TextField onChange={noop} isEditable={true} />);
+        const testSubject = mount(<TextField onChange={noop} isEditable />);
 
         testSubject.find('button').simulate('click');
 
@@ -84,7 +84,7 @@ describe('<TextField />', () => {
         const listKey = 'Mind 2 Motion';
 
         const testSubject = mount(
-          <TextField onChange={changeHandler} isEditable={true} value={unchangedFieldValue} listKey={listKey} />
+          <TextField onChange={changeHandler} isEditable value={unchangedFieldValue} listKey={listKey} />
         );
         testSubject.find('button').simulate('click');
 

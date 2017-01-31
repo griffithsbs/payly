@@ -7,11 +7,11 @@
     ],
     "rules": {
         "indent": [
-            1, 4
+            "warn", 4
         ],
         "linebreak-style": "off",
 
-        "semi": [ 1, "always", { "omitLastInOneLineBlock": true } ],
+        "semi": [ "warn", "always", { "omitLastInOneLineBlock": true } ],
 
         "comma-dangle": "off",
         "no-underscore-dangle": "off",
