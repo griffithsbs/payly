@@ -16,6 +16,8 @@
         "comma-dangle": "off",
         "no-underscore-dangle": "off",
         "arrow-parens": "off",
+        "no-multiple-empty-lines": ["warn"],
+        "no-trailing-spaces": ["warn"],
 
         "react/sort-comp": "off"
     }
