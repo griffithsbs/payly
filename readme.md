@@ -13,7 +13,7 @@ payly is/will be a React-Redux single page application.
 - tests are currently run via npm: execute npm test at the project root
 - tests are written with mocha+chai+sinon, using enzyme for testing React components
 
-### TODO
+#### TODO
 1. cover all non-throwaway code with tests
 2. make a start on styling
 3. write a proper harness and a proper entry point
