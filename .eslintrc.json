@@ -19,6 +19,7 @@
         "no-multiple-empty-lines": ["warn"],
         "no-trailing-spaces": ["warn"],
         "no-unused-vars": ["warn"],
+        "no-unused-expressions": ["warn"],
         "quotes": ["warn"],
 
         "react/sort-comp": "off"

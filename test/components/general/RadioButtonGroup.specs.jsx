@@ -1,6 +1,6 @@
 import 'jsdom-global/register';
 import React from 'react'; // eslint-disable-line no-unused-vars
-import { describe, it } from 'mocha';
+import { describe, it, beforeEach } from 'mocha';
 import chai from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 import { mount, shallow } from 'enzyme';
@@ -18,8 +18,7 @@ describe('<RadioButtonGroup />', () => {
             const testSubject = shallow(<RadioButtonGroup buttons={[]} onSelected={() => {}} />);
 
             testSubject.should.have.exactly(1).descendants('div');
-            testSubject.find('div').first().should.be.blank();
-            // TODO how to assert that the testSubject only contains the empty div?
+            testSubject.forEach(n => n.should.be.blank());
         });
     });
 
@@ -85,6 +84,92 @@ describe('<RadioButtonGroup />', () => {
     });
 
     describe('given more than one button', () => {
-        // TODO
+        let selectedHandler;
+        let buttons;
+
+        beforeEach(() => {
+            selectedHandler = sinon.spy();
+            buttons = [
+                {
+                    key: '1',
+                    label: 'Like a drunk in a midnight choir'
+                },
+                {
+                    key: '2',
+                    label: 'Like a drunk in a midnight choir',
+                    isSelected: true
+                },
+                {
+                    key: '3',
+                    label: 'I have tried in my way to be free'
+                },
+            ];
+        });
+
+        it('displays the labels for the buttons, prefixed by a single space', () => {
+            const testSubject = mount(
+              <RadioButtonGroup buttons={buttons} onSelected={() => {}} />
+            );
+            const labelElements = testSubject.find('label');
+            let i = 0;
+            labelElements.forEach(w => w.should.have.text(` ${buttons[i++].label}`));
+        });
+        it('displays the labels for the buttons, prefixed by a single space', () => {
+            const testSubject = mount(
+              <RadioButtonGroup buttons={buttons} onSelected={() => {}} />
+            );
+            const labelElements = testSubject.find('label');
+            let i = 0;
+            labelElements.forEach(w => w.should.have.text(` ${buttons[i++].label}`));
+        });
+
+        describe('the selected button', () => {
+            it('displays a checked radio button', () => {
+                const testSubject = mount(
+                  <RadioButtonGroup buttons={buttons} onSelected={() => {}} />
+                );
+                testSubject.find('input').at(1).should.have.prop('checked', true);
+            });
+            describe('when the button is de-selected', () => {
+                it('does not invoke the selected handler with the key', () => {
+                    const testSubject = mount(
+                      <RadioButtonGroup buttons={buttons} onSelected={selectedHandler} />
+                    );
+                    const radioInput = testSubject.find('input').at(1);
+                    radioInput.get(0).checked = false;
+                    radioInput.simulate('change');
+
+                    selectedHandler.should.not.have.been.called;
+                });
+            });
+        });
+
+        describe('the other (de-selected) buttons', () => {
+            it('displays an unchecked radio button', () => {
+                const testSubject = mount(
+                  <RadioButtonGroup buttons={buttons} onSelected={() => {}} />
+                );
+                testSubject.find('input').at(0).should.have.prop('checked', false);
+                testSubject.find('input').at(2).should.have.prop('checked', false);
+            });
+            describe('when the button is selected', () => {
+                it('invokes the selected handler with the key', () => {
+                    const testSubject = mount(
+                      <RadioButtonGroup buttons={buttons} onSelected={selectedHandler} />
+                    );
+                    const radioInputs = testSubject.find('input')
+
+                    radioInputs.at(0).get(0).checked = false;
+                    radioInputs.at(0).simulate('change');
+
+                    selectedHandler.should.have.been.calledWith(buttons[0].key);
+
+                    radioInputs.at(2).get(0).checked = false;
+                    radioInputs.at(2).simulate('change');
+
+                    selectedHandler.should.have.been.calledWith(buttons[2].key);
+                });
+            });
+        });
     });
 });
