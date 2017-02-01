@@ -37,10 +37,6 @@ describe('<RadioButtonGroup />', () => {
             labelElement.should.have.text(` ${label}`);
         });
 
-        describe('when the button is selected', () => {
-            // TODO
-        });
-
         describe('which is selected', () => {
             it('contains a checked radio button', () => {
                 const testSubject = mount(
@@ -48,6 +44,19 @@ describe('<RadioButtonGroup />', () => {
                 );
                 testSubject.should.have.exactly(1).descendants('input');
                 testSubject.find('input').first().should.have.prop('checked', true);
+            });
+            describe('when the button is de-selected', () => {
+                it('does not invoke the selected handler with the key', () => {
+                    const selectedHandler = sinon.spy();
+                    const testSubject = mount(
+                      <RadioButtonGroup buttons={[{ isSelected: true, key }]} onSelected={selectedHandler} />
+                    );
+                    const radioInput = testSubject.find('input');
+                    radioInput.get(0).checked = false;
+                    radioInput.simulate('change');
+
+                    selectedHandler.should.not.have.been.called;
+                });
             });
         });
 
@@ -58,6 +67,19 @@ describe('<RadioButtonGroup />', () => {
                 );
                 testSubject.should.have.exactly(1).descendants('input');
                 testSubject.find('input').first().should.have.prop('checked', false);
+            });
+            describe('when the button is selected', () => {
+                it('invokes the selected handler with the key', () => {
+                    const selectedHandler = sinon.spy();
+                    const testSubject = mount(
+                      <RadioButtonGroup buttons={[{ isSelected: false, key }]} onSelected={selectedHandler} />
+                    );
+                    const radioInput = testSubject.find('input');
+                    radioInput.get(0).checked = true;
+                    radioInput.simulate('change');
+
+                    selectedHandler.should.have.been.calledWith(key);
+                });
             });
         });
     });
