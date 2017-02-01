@@ -18,6 +18,8 @@
         "arrow-parens": "off",
         "no-multiple-empty-lines": ["warn"],
         "no-trailing-spaces": ["warn"],
+        "no-unused-vars": ["warn"],
+        "quotes": ["warn"],
 
         "react/sort-comp": "off"
     }
