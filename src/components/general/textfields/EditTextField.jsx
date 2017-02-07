@@ -29,6 +29,6 @@ EditTextField.propTypes = {
     value: React.PropTypes.string,
     onSave: React.PropTypes.func.isRequired,
     listKey: React.PropTypes.string // used to refer to the index of the component within a list
-}
+};
 
-export { EditTextField as default }
+export { EditTextField as default };

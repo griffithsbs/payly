@@ -10,7 +10,9 @@ class SortButton extends React.Component {
     }
 
     render() {
-        return <button onClick={this.props.onSort}>{this.props.label} ({this._getLabelFor(this.props.direction)})</button>;
+        return (
+          <button onClick={this.props.onSort}>{this.props.label} ({this._getLabelFor(this.props.direction)})</button>
+        );
     }
 
     // TODO
@@ -29,7 +31,7 @@ class SortButton extends React.Component {
 SortButton.propTypes = {
     label: React.PropTypes.string.isRequired,
     onSort: React.PropTypes.func.isRequired,
-    direction: React.PropTypes.string
+    direction: React.PropTypes.string.isRequired
 };
 
-export { SortButton as default }
+export { SortButton as default };
