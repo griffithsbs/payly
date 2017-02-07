@@ -71,7 +71,7 @@ class ListSorter extends React.Component {
         this.setState({
             sortingOptions,
             sortDirection: reverse(this.state.sortDirection)
-        })
+        });
     }
 
 }
