@@ -12,14 +12,17 @@ import { ascending, descending } from 'lib/orderings';
 chai.use(chaiEnzyme());
 chai.use(sinonChai);
 chai.should();
+const expect = chai.expect;
 
 describe('<SortButton />', () => {
     const label = 'I could not hold onto her very long';
     const ascendingDirectionLabel = '(a-z)';
     const descendingDirectionLabel = '(z-a)';
 
-    describe('throws if direction is unrecognised', () => {
-        // TODO
+    it('throws if direction is unrecognised', () => {
+        expect(() => shallow(
+          <SortButton label="x" onSort={() => {}} direction="not a direction, no sirree" />
+        )).to.throw('unrecognised direction');
     });
 
     describe('renders a button with the given label', () => {
