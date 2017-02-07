@@ -10,6 +10,7 @@
             "warn", 4
         ],
         "linebreak-style": "off",
+        "keyword-spacing": "off",
 
         "semi": [ "warn", "always", { "omitLastInOneLineBlock": true } ],
 
