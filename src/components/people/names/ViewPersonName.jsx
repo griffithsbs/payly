@@ -1,19 +1,13 @@
 import React from 'react';
-
 import ViewTextField from 'components/general/textfields/ViewTextField';
 
-class ViewPersonName extends React.Component {
-
-    render() {
-        return <ViewTextField value={`${this.props.firstName} ${this.props.lastName}`} onEdit={this.props.onEdit} />;
-    }
-
-}
+const ViewPersonName = props =>
+  <ViewTextField value={`${props.firstName} ${props.lastName}`} onEdit={props.onEdit} />;
 
 ViewPersonName.propTypes = {
     firstName: React.PropTypes.string,
     lastName: React.PropTypes.string.isRequired,
     onEdit: React.PropTypes.func.isRequired
-}
+};
 
-export { ViewPersonName as default }
+export { ViewPersonName as default };
