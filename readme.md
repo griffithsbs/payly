@@ -9,12 +9,14 @@ payly is/will be a React-Redux single page application.
 - webpack is used for module bundling
 - eslint is used for linting
 
+#### building and running
+- to run the build (webpack + babel), execute `npm run build` at the project root
+- to start the dev server, execute `npm run start:dev` at the project root. The demo page will be served up at localhost:8080/harness.
+
 #### tests
-- tests are currently run via npm: execute npm test at the project root
+- tests are currently run via npm: `execute npm test` at the project root
 - tests are written with mocha+chai+sinon, using enzyme for testing React components
 
 #### TODO
 1. cover all non-throwaway code with tests
 2. make a start on styling
-3. write a proper harness and a proper entry point
-4. write scripts to (i) build, (ii) test, (iii) watch, and (iv) start harness
