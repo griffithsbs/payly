@@ -3,4 +3,13 @@ import React from 'react';
 const ViewTextField = props => 
     <div>{props.value} <button onClick={props.onEdit}>Edit</button></div>;
 
-export { ViewTextField as default }
+ViewTextField.propTypes = {
+    value: React.PropTypes.string,
+    onEdit: React.PropTypes.func.isRequired,
+};
+
+ViewTextField.defaultProps = {
+    value: '',
+};
+
+export { ViewTextField as default };

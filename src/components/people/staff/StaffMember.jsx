@@ -9,7 +9,7 @@ class StaffMember extends React.Component {
         super(props);
         this._onChange = this._onChange.bind(this);
     }
- 
+
     render() {
         const listKeyAndChangeHandler = {
             listKey: this.props.listKey,
@@ -37,6 +37,6 @@ StaffMember.propTypes = {
     phoneNumber: React.PropTypes.string,
     onChange: React.PropTypes.func.isRequired,
     listKey: React.PropTypes.string
-}
+};
 
 export { StaffMember as default }

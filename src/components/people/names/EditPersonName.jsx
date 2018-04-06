@@ -32,6 +32,6 @@ EditPersonName.propTypes = {
     lastName: React.PropTypes.string.isRequired,
     onSave: React.PropTypes.func.isRequired,
     listKey: React.PropTypes.string // used to refer to the index of the component within a list of editable names
-}
+};
 
-export { EditPersonName as default }
+export { EditPersonName as default };

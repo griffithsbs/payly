@@ -24,7 +24,7 @@ class StaffList extends React.Component {
             <div>
                 <ListSorter label="Sort by" onSort={this._sort} sortingOptions={this.state.sortingOptions} />
                 {
-                    this.state.sortedStaff.map(s => 
+                    this.state.sortedStaff.map(s =>
                         <StaffMember {...s} listKey={s.key} onChange={this._onStaffChange} />
                     )
                 }
@@ -39,7 +39,7 @@ class StaffList extends React.Component {
 
     _onStaffChange(changedStaffMember) {
         const sortedStaff = this.state.sortedStaff.map(staffMember => {
-            if(staffMember.key == changedStaffMember.key) {
+            if(staffMember.key === changedStaffMember.key) {
                 return changedStaffMember;
             }
             return staffMember;
@@ -53,4 +53,4 @@ StaffList.propTypes = {
     staff: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
 };
 
-export { StaffList as default }
+export { StaffList as default };

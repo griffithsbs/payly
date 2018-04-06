@@ -2,7 +2,7 @@ import React from 'react';
 import ViewTextField from 'components/general/textfields/ViewTextField';
 
 const ViewPersonName = props =>
-  <ViewTextField value={`${props.firstName} ${props.lastName}`} onEdit={props.onEdit} />;
+    <ViewTextField value={`${props.firstName} ${props.lastName}`} onEdit={props.onEdit} />;
 
 ViewPersonName.propTypes = {
     firstName: React.PropTypes.string,

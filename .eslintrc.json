@@ -9,8 +9,12 @@
         "indent": [
             "warn", 4
         ],
+        "react/jsx-indent": ["warn", 4],
+
         "linebreak-style": "off",
         "keyword-spacing": "off",
+
+        "max-len": ["warn", { "code": 120 }],
 
         "semi": [ "warn", "always", { "omitLastInOneLineBlock": true } ],
 

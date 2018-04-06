@@ -7,7 +7,7 @@ class TextField extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = props;
+        this.state = props; // TODO clone values instead of copying reference
         this._onSave = this._onSave.bind(this);
         this._onEdit = this._onEdit.bind(this);
     }
@@ -33,7 +33,7 @@ class TextField extends React.Component {
 TextField.propTypes = {
     value: React.PropTypes.string,
     onChange: React.PropTypes.func.isRequired,
-    listKey: React.PropTypes.string
-}
+    listKey: React.PropTypes.string.isRequired,
+};
 
 export { TextField as default }

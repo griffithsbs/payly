@@ -18,4 +18,4 @@ RadioButtonGroup.propTypes = {
     onSelected: React.PropTypes.func.isRequired
 };
 
-export { RadioButtonGroup as default }
+export { RadioButtonGroup as default };

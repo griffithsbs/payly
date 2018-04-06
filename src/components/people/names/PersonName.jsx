@@ -13,7 +13,7 @@ class PersonName extends React.Component {
     }
 
     render() {
-        const nameProps = Object.assign({}, { firstName : this.state.firstName, lastName: this.state.lastName, listKey: this.props.listKey });
+        const nameProps = Object.assign({}, { firstName: this.state.firstName, lastName: this.state.lastName, listKey: this.props.listKey });
         return this.state.isEditable ?
             <EditPersonName {...nameProps} onSave={this._onSave} /> :
             <ViewPersonName {...nameProps} onEdit={this._onEdit} /> ;
@@ -34,7 +34,8 @@ PersonName.propTypes = {
     firstName: React.PropTypes.string,
     lastName: React.PropTypes.string.isRequired,
     isEditable: React.PropTypes.bool,
-    listKey: React.PropTypes.string
-}
+    listKey: React.PropTypes.string,
+    onChange: React.PropTypes.function.isRequired,
+};
 
-export { PersonName as default }
+export { PersonName as default };

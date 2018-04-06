@@ -13,7 +13,7 @@ const getLabelFor = direction => {
 };
 
 const SortButton = props =>
-  <button onClick={props.onSort}>{props.label} ({getLabelFor(props.direction)})</button>;
+    <button onClick={props.onSort}>{props.label} ({getLabelFor(props.direction)})</button>;
 
 SortButton.propTypes = {
     label: React.PropTypes.string.isRequired,

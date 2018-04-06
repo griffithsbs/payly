@@ -9,10 +9,10 @@ class EditTextField extends React.Component {
 
     render() {
         return (
-          <div>
-            <input defaultValue={this.props.value} ref={i => { this.valueInput = i }} />
-            <button onClick={this._onSave}>Save</button>
-          </div>
+            <div>
+                <input defaultValue={this.props.value} ref={i => { this.valueInput = i }} />
+                <button onClick={this._onSave}>Save</button>
+            </div>
         );
     }
 
@@ -28,7 +28,11 @@ class EditTextField extends React.Component {
 EditTextField.propTypes = {
     value: React.PropTypes.string,
     onSave: React.PropTypes.func.isRequired,
-    listKey: React.PropTypes.string // used to refer to the index of the component within a list
+    listKey: React.PropTypes.string.isRequired, // used to refer to the index of the component within a list
+};
+
+EditTextField.defaultProps = {
+    value: '',
 };
 
 export { EditTextField as default };

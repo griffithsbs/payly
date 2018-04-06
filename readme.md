@@ -14,7 +14,7 @@ payly is/will be a React-Redux single page application.
 - to start the dev server, execute `npm run start:dev` at the project root. The demo page will be served up at localhost:8080/harness.
 
 #### tests
-- tests are currently run via npm: `execute npm test` at the project root
+- tests are currently run via npm: execute `npm test` at the project root
 - tests are written with mocha+chai+sinon, using enzyme for testing React components
 
 #### TODO

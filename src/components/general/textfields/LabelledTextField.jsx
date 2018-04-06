@@ -13,3 +13,10 @@ export default function LabelledTextField(props) {
     return <div><label>{props.label}</label><TextField {...textFieldProps} /></div>;
 }
 
+LabelledTextField.propTypes = {
+    label: React.PropTypes.string,
+    value: React.PropTypes.string,
+    onChange: React.PropTypes.func.isRequired,
+    listKey: React.PropTypes.string.isRequired,
+};
+

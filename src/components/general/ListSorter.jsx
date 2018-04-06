@@ -79,7 +79,13 @@ class ListSorter extends React.Component {
 ListSorter.propTypes = {
     label: React.PropTypes.string.isRequired,
     onSort: React.PropTypes.func.isRequired,
-    sortingOptions: React.PropTypes.array.isRequired // TODO arrayOf ?
+    sortingOptions: React.PropTypes.arrayOf(
+        React.PropTypes.shape({
+            key: React.PropTypes.string.isRequired,
+            label: React.PropTypes.string.isRequired,
+            sortingFunc: React.PropTypes.func.isRequired,
+        })
+    ).isRequired,
 };
 
-export { ListSorter as default }
+export { ListSorter as default };
